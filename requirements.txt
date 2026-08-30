@@ -1,1 +1,2 @@
 gradio==6.26.0
+socksio==1.0.0
