@@ -1,2 +1,5 @@
+# User interface framework
 gradio==6.26.0
+
+# SOCKS transport support for proxied HTTPX environments
 socksio==1.0.0
