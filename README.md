@@ -102,7 +102,7 @@ python app.py
 Open the local address shown in the terminal, normally:
 
 ```text
-http://0.0.0.1:7860
+http://0.0.0.0:7860
 ```
 
 Enter a name and confirm that the application returns a greeting. Press **Control + C** in the terminal to stop the server. Run `deactivate` when the virtual environment is no longer needed.
