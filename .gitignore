@@ -1,9 +1,24 @@
-# Local Python environment
+# Local Python environments
 .venv/
+venv/
 
-# Python generated files
+# Python-generated files and caches
 __pycache__/
-*.pyc
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
-# macOS generated files
+# Local environment variables and secrets
+.env
+.env.*
+
+# macOS-generated files
 .DS_Store
+
+# Visual Studio Code workspace files not shared with the repository
+.vscode/*.code-workspace
+
+# Keep the shared Visual Studio Code configuration
+!.vscode/settings.json
+!.vscode/extensions.json
