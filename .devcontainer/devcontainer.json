@@ -1,14 +1,18 @@
 {
-  "name": "MSAI 631 Python and Gradio",
+  "name": "MSAI 631 Optional Python 3.12 Environment",
   "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
   "features": {
     "ghcr.io/devcontainers/features/git:1": {}
   },
   "postCreateCommand": "python -m pip install --upgrade pip && python -m pip install -r requirements.txt",
+  "containerEnv": {
+    "GRADIO_SERVER_NAME": "0.0.0.0",
+    "GRADIO_SERVER_PORT": "7860"
+  },
   "forwardPorts": [7860],
   "portsAttributes": {
     "7860": {
-      "label": "Gradio Hello HCI",
+      "label": "Gradio Local Development Test",
       "onAutoForward": "openPreview"
     }
   },
