@@ -1,0 +1,2 @@
+# Python 3.12. No third party packages are required.
+# The application and automated tests use the Python standard library only.

@@ -1,0 +1,85 @@
+ASSISTANT ENVIRONMENT VALIDATION
+This is Linux/container evidence, not a test on Yasharth Singh's Windows computer.
+UTC time: 2026-09-13T18:29:20.465234+00:00
+Python: 3.12.14
+Platform: Linux-6.18.44-x86_64-with-glibc2.39
+Command: python -m unittest discover -s tests -v
+Exit code: 0
+Scope: engine behavior and real loopback HTTP requests.
+Browser rendering, keyboard behavior, GitHub authentication, and Windows execution have not been verified.
+
+
+test_capabilities_and_limitations_are_disclosed (test_engine.EngineTests.test_capabilities_and_limitations_are_disclosed) ... ok
+test_command_without_payload_explains_usage (test_engine.EngineTests.test_command_without_payload_explains_usage) ... ok
+test_control_characters_are_rejected (test_engine.EngineTests.test_control_characters_are_rejected) ... ok
+test_each_supported_faq_topic (test_engine.EngineTests.test_each_supported_faq_topic) ... ok
+test_echo_preserves_case_and_markup_as_plain_text (test_engine.EngineTests.test_echo_preserves_case_and_markup_as_plain_text) ... ok
+test_empty_and_whitespace_messages_are_rejected (test_engine.EngineTests.test_empty_and_whitespace_messages_are_rejected) ... ok
+test_greeting_normalizes_case_and_whitespace (test_engine.EngineTests.test_greeting_normalizes_case_and_whitespace) ... ok
+test_length_boundary_is_enforced (test_engine.EngineTests.test_length_boundary_is_enforced) ... ok
+test_lone_unicode_surrogates_are_rejected (test_engine.EngineTests.test_lone_unicode_surrogates_are_rejected) ... ok
+test_multiple_topics_request_clarification (test_engine.EngineTests.test_multiple_topics_request_clarification) ... ok
+test_non_text_messages_are_rejected (test_engine.EngineTests.test_non_text_messages_are_rejected) ... ok
+test_reverse_command (test_engine.EngineTests.test_reverse_command) ... ok
+test_thanks_and_goodbye (test_engine.EngineTests.test_thanks_and_goodbye) ... ok
+test_unicode_and_repeated_input_are_deterministic (test_engine.EngineTests.test_unicode_and_repeated_input_are_deterministic) ... ok
+test_unknown_question_returns_useful_fallback (test_engine.EngineTests.test_unknown_question_returns_useful_fallback) ... ok
+test_word_boundaries_avoid_substring_matches (test_engine.EngineTests.test_word_boundaries_avoid_substring_matches) ... ok
+test_server_can_use_an_injected_adapter (test_http.AdapterBoundaryTests.test_server_can_use_an_injected_adapter) ... 127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 200 -
+ok
+test_empty_body_is_rejected (test_http.HTTPTests.test_empty_body_is_rejected) ... 127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 400 -
+ok
+test_excessively_nested_json_is_handled (test_http.HTTPTests.test_excessively_nested_json_is_handled) ... 127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 400 -
+ok
+test_external_host_and_origin_are_rejected (test_http.HTTPTests.test_external_host_and_origin_are_rejected) ... 127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 403 -
+127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 403 -
+127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 403 -
+127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 403 -
+127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 403 -
+ok
+test_html_input_remains_json_text (test_http.HTTPTests.test_html_input_remains_json_text) ... 127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 200 -
+ok
+test_invalid_message_types_and_lengths_are_handled (test_http.HTTPTests.test_invalid_message_types_and_lengths_are_handled) ... 127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 400 -
+ok
+test_invalid_payload_shapes_are_handled (test_http.HTTPTests.test_invalid_payload_shapes_are_handled) ... 127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 400 -
+ok
+test_invalid_utf8_is_handled (test_http.HTTPTests.test_invalid_utf8_is_handled) ... 127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 400 -
+ok
+test_lone_unicode_surrogate_is_handled (test_http.HTTPTests.test_lone_unicode_surrogate_is_handled) ... 127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 400 -
+ok
+test_malformed_json_is_handled (test_http.HTTPTests.test_malformed_json_is_handled) ... 127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 400 -
+ok
+test_oversized_body_is_rejected (test_http.HTTPTests.test_oversized_body_is_rejected) ... 127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 413 -
+ok
+test_page_and_static_assets_are_available (test_http.HTTPTests.test_page_and_static_assets_are_available) ... 127.0.0.1 - - [13/Sep/2026 11:29:19] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 11:29:19] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 11:29:19] "GET /static/style.css HTTP/1.1" 200 -
+ok
+test_same_origin_browser_request_is_allowed (test_http.HTTPTests.test_same_origin_browser_request_is_allowed) ... 127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 200 -
+ok
+test_server_binds_only_to_loopback (test_http.HTTPTests.test_server_binds_only_to_loopback) ... ok
+test_successful_message_and_safety_headers (test_http.HTTPTests.test_successful_message_and_safety_headers) ... 127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 200 -
+ok
+test_unsupported_routes_and_traversal_are_rejected (test_http.HTTPTests.test_unsupported_routes_and_traversal_are_rejected) ... 127.0.0.1 - - [13/Sep/2026 11:29:19] "GET /missing HTTP/1.1" 404 -
+127.0.0.1 - - [13/Sep/2026 11:29:19] "GET /../engine.py HTTP/1.1" 404 -
+127.0.0.1 - - [13/Sep/2026 11:29:19] "GET /static/../engine.py HTTP/1.1" 404 -
+127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /missing HTTP/1.1" 404 -
+ok
+test_wrong_content_type_is_rejected (test_http.HTTPTests.test_wrong_content_type_is_rejected) ... 127.0.0.1 - - [13/Sep/2026 11:29:19] "POST /api/messages HTTP/1.1" 415 -
+ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 1.090s
+
+OK

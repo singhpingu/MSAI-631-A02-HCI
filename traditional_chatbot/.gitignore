@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+*.log
+dist/
+evidence/windows_validation.txt
+.DS_Store
+Thumbs.db
