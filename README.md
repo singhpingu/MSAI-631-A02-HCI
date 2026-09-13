@@ -156,3 +156,11 @@ Review `git status` before committing. The `.gitignore` file prevents the local 
 ## Repository access
 
 This course repository is private. The instructor account, `AlanAtUC`, should retain collaborator access with permission to read the repository.
+
+## Traditional Chatbot
+
+The Course Development Helper uses predefined rules and Python's standard
+library. It was tested locally on Windows using VS Code and Python 3.12.
+All 33 automated tests passed, and the browser greeting worked successfully.
+
+[Chatbot setup, capabilities, and testing instructions](traditional_chatbot/README.md)
