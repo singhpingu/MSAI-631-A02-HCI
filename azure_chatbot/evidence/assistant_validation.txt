@@ -1,0 +1,119 @@
+Assistant validation only; not a Windows or live Azure result.
+All cloud responses in this suite use synthetic fixtures/fake transport.
+UTC: 2026-09-13T19:54:46.475695+00:00
+Python: 3.12.14
+Platform: Linux-6.18.44-x86_64-with-glibc2.39
+azure-ai-textanalytics: 5.4.0
+azure-core: 1.41.0
+Command: python -m unittest discover -s tests -v
+
+test_authentication_and_throttling_errors_are_sanitized (test_azure.AzureBoundaryTests.test_authentication_and_throttling_errors_are_sanitized) ... ok
+test_document_error_never_becomes_a_sentiment_result (test_azure.AzureBoundaryTests.test_document_error_never_becomes_a_sentiment_result) ... ok
+test_invalid_result_count_is_handled (test_azure.AzureBoundaryTests.test_invalid_result_count_is_handled) ... ok
+test_invalid_scores_and_labels_are_rejected (test_azure.AzureBoundaryTests.test_invalid_scores_and_labels_are_rejected) ... ok
+test_missing_configuration_is_local_and_actionable (test_azure.AzureBoundaryTests.test_missing_configuration_is_local_and_actionable) ... ok
+test_missing_sdk_is_reported_without_exposing_configuration (test_azure.AzureBoundaryTests.test_missing_sdk_is_reported_without_exposing_configuration) ... ok
+test_network_timeout_is_sanitized_without_retry (test_azure.AzureBoundaryTests.test_network_timeout_is_sanitized_without_retry) ... ok
+test_non_azure_or_non_https_endpoints_are_rejected_before_sdk_load (test_azure.AzureBoundaryTests.test_non_azure_or_non_https_endpoints_are_rejected_before_sdk_load) ... ok
+test_request_and_server_errors_are_sanitized (test_azure.AzureBoundaryTests.test_request_and_server_errors_are_sanitized) ... ok
+test_single_document_options_scores_and_cleanup (test_azure.AzureBoundaryTests.test_single_document_options_scores_and_cleanup) ... ok
+test_unexpected_error_is_sanitized (test_azure.AzureBoundaryTests.test_unexpected_error_is_sanitized) ... ok
+test_capabilities_and_limitations_are_disclosed (test_engine.EngineTests.test_capabilities_and_limitations_are_disclosed) ... ok
+test_command_without_payload_explains_usage (test_engine.EngineTests.test_command_without_payload_explains_usage) ... ok
+test_control_characters_are_rejected (test_engine.EngineTests.test_control_characters_are_rejected) ... ok
+test_each_supported_faq_topic (test_engine.EngineTests.test_each_supported_faq_topic) ... ok
+test_echo_preserves_case_and_markup_as_plain_text (test_engine.EngineTests.test_echo_preserves_case_and_markup_as_plain_text) ... ok
+test_empty_and_whitespace_messages_are_rejected (test_engine.EngineTests.test_empty_and_whitespace_messages_are_rejected) ... ok
+test_greeting_normalizes_case_and_whitespace (test_engine.EngineTests.test_greeting_normalizes_case_and_whitespace) ... ok
+test_length_boundary_is_enforced (test_engine.EngineTests.test_length_boundary_is_enforced) ... ok
+test_lone_unicode_surrogates_are_rejected (test_engine.EngineTests.test_lone_unicode_surrogates_are_rejected) ... ok
+test_multiple_topics_request_clarification (test_engine.EngineTests.test_multiple_topics_request_clarification) ... ok
+test_non_text_messages_are_rejected (test_engine.EngineTests.test_non_text_messages_are_rejected) ... ok
+test_reverse_command (test_engine.EngineTests.test_reverse_command) ... ok
+test_thanks_and_goodbye (test_engine.EngineTests.test_thanks_and_goodbye) ... ok
+test_unicode_and_repeated_input_are_deterministic (test_engine.EngineTests.test_unicode_and_repeated_input_are_deterministic) ... ok
+test_unknown_question_returns_useful_fallback (test_engine.EngineTests.test_unknown_question_returns_useful_fallback) ... ok
+test_word_boundaries_avoid_substring_matches (test_engine.EngineTests.test_word_boundaries_avoid_substring_matches) ... ok
+test_server_can_use_an_injected_adapter (test_http.AdapterBoundaryTests.test_server_can_use_an_injected_adapter) ... 127.0.0.1 - - [13/Sep/2026 12:54:47] "POST /api/messages HTTP/1.1" 200 -
+ok
+test_offline_sdk_fixture_travels_through_http_route (test_http.CloudHTTPTests.test_offline_sdk_fixture_travels_through_http_route) ... 127.0.0.1 - - [13/Sep/2026 12:54:47] "POST /api/messages HTTP/1.1" 200 -
+ok
+test_browser_contains_unchecked_per_request_consent (test_http.HTTPTests.test_browser_contains_unchecked_per_request_consent) ... 127.0.0.1 - - [13/Sep/2026 12:54:48] "GET / HTTP/1.1" 200 -
+ok
+test_cloud_permission_missing_or_false_prevents_azure (test_http.HTTPTests.test_cloud_permission_missing_or_false_prevents_azure) ... 127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 200 -
+ok
+test_empty_body_is_rejected (test_http.HTTPTests.test_empty_body_is_rejected) ... 127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 400 -
+ok
+test_excessively_nested_json_is_handled (test_http.HTTPTests.test_excessively_nested_json_is_handled) ... 127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 400 -
+ok
+test_external_host_and_origin_are_rejected (test_http.HTTPTests.test_external_host_and_origin_are_rejected) ... 127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 403 -
+127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 403 -
+127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 403 -
+127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 403 -
+127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 403 -
+ok
+test_html_input_remains_json_text (test_http.HTTPTests.test_html_input_remains_json_text) ... 127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 200 -
+ok
+test_invalid_message_types_and_lengths_are_handled (test_http.HTTPTests.test_invalid_message_types_and_lengths_are_handled) ... 127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 400 -
+ok
+test_invalid_payload_shapes_are_handled (test_http.HTTPTests.test_invalid_payload_shapes_are_handled) ... 127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 400 -
+ok
+test_invalid_utf8_is_handled (test_http.HTTPTests.test_invalid_utf8_is_handled) ... 127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 400 -
+ok
+test_lone_unicode_surrogate_is_handled (test_http.HTTPTests.test_lone_unicode_surrogate_is_handled) ... 127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 400 -
+ok
+test_malformed_json_is_handled (test_http.HTTPTests.test_malformed_json_is_handled) ... 127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 400 -
+ok
+test_non_boolean_cloud_permission_is_rejected (test_http.HTTPTests.test_non_boolean_cloud_permission_is_rejected) ... 127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 400 -
+ok
+test_oversized_body_is_rejected (test_http.HTTPTests.test_oversized_body_is_rejected) ... 127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 413 -
+ok
+test_page_and_static_assets_are_available (test_http.HTTPTests.test_page_and_static_assets_are_available) ... 127.0.0.1 - - [13/Sep/2026 12:54:48] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 12:54:48] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 12:54:48] "GET /static/style.css HTTP/1.1" 200 -
+ok
+test_same_origin_browser_request_is_allowed (test_http.HTTPTests.test_same_origin_browser_request_is_allowed) ... 127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 200 -
+ok
+test_server_binds_only_to_loopback (test_http.HTTPTests.test_server_binds_only_to_loopback) ... ok
+test_successful_message_and_safety_headers (test_http.HTTPTests.test_successful_message_and_safety_headers) ... 127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 200 -
+ok
+test_unsupported_routes_and_traversal_are_rejected (test_http.HTTPTests.test_unsupported_routes_and_traversal_are_rejected) ... 127.0.0.1 - - [13/Sep/2026 12:54:48] "GET /missing HTTP/1.1" 404 -
+127.0.0.1 - - [13/Sep/2026 12:54:48] "GET /../engine.py HTTP/1.1" 404 -
+127.0.0.1 - - [13/Sep/2026 12:54:48] "GET /static/../engine.py HTTP/1.1" 404 -
+127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /missing HTTP/1.1" 404 -
+ok
+test_wrong_content_type_is_rejected (test_http.HTTPTests.test_wrong_content_type_is_rejected) ... 127.0.0.1 - - [13/Sep/2026 12:54:48] "POST /api/messages HTTP/1.1" 415 -
+ok
+test_boolean_permission_is_validated_before_cloud_call (test_hybrid.HybridTests.test_boolean_permission_is_validated_before_cloud_call) ... ok
+test_empty_command_is_rejected_without_cloud_call (test_hybrid.HybridTests.test_empty_command_is_rejected_without_cloud_call) ... ok
+test_help_explains_both_modes_and_consent (test_hybrid.HybridTests.test_help_explains_both_modes_and_consent) ... ok
+test_local_commands_never_call_azure_even_with_permission (test_hybrid.HybridTests.test_local_commands_never_call_azure_even_with_permission) ... ok
+test_malformed_messages_are_rejected_before_cloud_call (test_hybrid.HybridTests.test_malformed_messages_are_rejected_before_cloud_call) ... ok
+test_only_stripped_command_payload_is_sent (test_hybrid.HybridTests.test_only_stripped_command_payload_is_sent) ... ok
+test_permission_is_not_remembered_for_next_request (test_hybrid.HybridTests.test_permission_is_not_remembered_for_next_request) ... ok
+test_second_concurrent_request_does_not_reach_cloud (test_hybrid.HybridTests.test_second_concurrent_request_does_not_reach_cloud) ... ok
+test_sentiment_requires_explicit_permission (test_hybrid.HybridTests.test_sentiment_requires_explicit_permission) ... ok
+test_service_failure_retains_local_commands_and_allows_later_retry (test_hybrid.HybridTests.test_service_failure_retains_local_commands_and_allows_later_retry) ... ok
+test_official_sdk_serializes_and_deserializes_with_fake_transport (test_sdk.SDKContractTests.test_official_sdk_serializes_and_deserializes_with_fake_transport) ... ok
+test_sdk_429_is_not_retried_and_error_is_sanitized (test_sdk.SDKContractTests.test_sdk_429_is_not_retried_and_error_is_sanitized) ... ok
+
+----------------------------------------------------------------------
+Ran 60 tests in 1.677s
+
+OK
+
+Exit code: 0

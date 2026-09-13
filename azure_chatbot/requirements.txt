@@ -1,0 +1,2 @@
+# Stable Microsoft SDK release; API version is explicitly selected in azure_service.py.
+azure-ai-textanalytics==5.4.0

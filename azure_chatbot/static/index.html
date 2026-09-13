@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Course Development Helper · Azure Sentiment</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">MSAI 631 A02 · Azure AI integration</p>
+      <h1>Course Development Helper</h1>
+      <p>Local course guidance with optional Azure sentiment analysis.</p>
+    </header>
+    <section class="notice" aria-label="Capabilities and limits">
+      <h2>What I can help with</h2>
+      <p>Git cloning, repository settings, Python, virtual environments, testing, and the chatbot algorithm. I also support greetings, thanks, echo, and reverse.</p>
+      <p><strong>Local rules:</strong> Ordinary messages stay on this computer. <strong>Azure AI:</strong> Use <code>sentiment: your English text</code> and give permission below to send that text to Azure AI Language. It classifies sentiment; it does not generate open ended answers or use an LLM.</p>
+      <p>I do not run commands or remember earlier messages. The app does not save chat text to a file. Azure requests opt out of service input logging for troubleshooting. Use non-sensitive sample sentences. Clear conversation removes the visible history.</p>
+    </section>
+    <section class="chat" aria-label="Chat interface">
+      <div class="chat-heading">
+        <h2>Conversation</h2>
+        <button id="clear" class="secondary" type="button">Clear conversation</button>
+      </div>
+      <div id="conversation" role="log" aria-live="polite" aria-relevant="additions" tabindex="0"></div>
+      <div class="examples" aria-label="Example prompts">
+        <button type="button" data-prompt="help">See capabilities</button>
+        <button type="button" data-prompt="How do I clone the repository?">Clone the repo</button>
+        <button type="button" data-prompt="How do I create a Python virtual environment?">Create a virtual environment</button>
+        <button type="button" data-prompt="sentiment: The instructions were clear and helpful.">Try Azure sentiment</button>
+      </div>
+      <form id="chat-form">
+        <label for="message">Your message</label>
+        <textarea id="message" name="message" rows="3" maxlength="1000" required aria-describedby="message-hint" placeholder="Try: How do I run tests?"></textarea>
+        <label class="consent" for="cloud-consent"><input type="checkbox" id="cloud-consent"> I allow this sentiment request's text to be sent to Azure AI Language.</label>
+        <p class="consent-hint">Permission applies to one request and resets after sending. Local commands never need it.</p>
+        <div class="form-footer">
+          <span id="message-hint">Up to 1,000 characters. Enter sends; Shift+Enter adds a line.</span>
+          <button id="send" type="submit">Send message</button>
+        </div>
+        <p id="status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
