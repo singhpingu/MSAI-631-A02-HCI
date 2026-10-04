@@ -1,0 +1,66 @@
+<!doctype html>
+<!-- Original StudyPath interface prepared with ChatGPT/Codex assistance. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StudyPath Learning Recommender</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#results">Skip to recommendations</a>
+  <header class="site-header">
+    <div class="brand">StudyPath <span>LEARNING RECOMMENDER</span></div>
+    <span class="local-badge">Local classroom project</span>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">MAKE A SMALL AMOUNT OF TIME USEFUL</p>
+      <h1 id="page-title">Find your next learning activity</h1>
+      <p>Choose what interests you and how much time you have. Explore suggestions you can understand and change.</p>
+    </section>
+    <div class="workspace">
+      <aside class="preferences" aria-labelledby="preferences-title">
+        <h2 id="preferences-title">Your choices</h2>
+        <form id="preferences-form">
+          <label for="query">What would you like to learn?</label>
+          <textarea id="query" rows="3" maxlength="800" placeholder="For example, usability testing or Python dictionaries"></textarea>
+          <fieldset id="topic-options"><legend>Or choose topics</legend></fieldset>
+          <div class="control-pair">
+            <div><label for="minutes">Minutes available</label><select id="minutes"><option>10</option><option>15</option><option>20</option><option selected>30</option><option>45</option><option>60</option></select></div>
+            <div><label for="level">Difficulty</label><select id="level"><option>Any</option><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select></div>
+          </div>
+          <div class="control-pair">
+            <div><label for="format">Activity format</label><select id="format"><option>Any</option><option>Practice</option><option>Reading</option><option>Reflection</option></select></div>
+            <div><label for="count">Suggestions</label><select id="count"><option>3</option><option selected>5</option><option>8</option></select></div>
+          </div>
+          <label for="diversity">Variety in the list</label>
+          <select id="diversity"><option value="0">Focus on text similarity</option><option value="0.25" selected>Some variety</option><option value="0.5">More variety</option></select>
+          <p class="hint">Variety reduces repeated content. It can change the order of suggestions.</p>
+          <label class="checkbox-row" for="auto"><input type="checkbox" id="auto">Update suggestions when I change choices</label>
+          <p class="hint">Optional. This updates this page only and never schedules work or contacts an external service.</p>
+          <button class="primary" type="submit" id="find-button">Find activities</button>
+          <button class="secondary" type="button" id="reset">Reset my choices</button>
+        </form>
+        <details class="seed-section">
+          <summary>Start from an activity you like</summary>
+          <label for="seed">Choose from the catalogue</label>
+          <select id="seed"></select>
+          <button class="secondary" type="button" id="add-seed">Use this activity as an interest</button>
+        </details>
+        <p class="hint" id="feedback-count">0 liked interests · 0 hidden activities</p>
+        <p class="privacy">Choices stay in this browser tab and are processed by your local Python server. Reloading clears them. The catalogue contains 24 original demonstration activities.</p>
+      </aside>
+      <section class="results-pane" id="results" aria-labelledby="results-title" tabindex="-1">
+        <div class="results-header"><div><p class="eyebrow">A STARTING POINT YOU CONTROL</p><h2 id="results-title">Suggested activities</h2></div><button class="text-button" id="download" type="button" disabled>Save result JSON</button></div>
+        <p id="status" class="status" role="status" aria-live="polite">Loading the activity catalogue...</p>
+        <p class="score-note">Text similarity measures shared features. It is not a confidence score or a prediction of learning success.</p>
+        <div id="cards" class="cards"></div>
+        <section class="method-note"><h3>How suggestions work</h3><p>TF IDF turns activity descriptions and interests into weighted text features. Cosine similarity finds related activities. Your time, difficulty and format choices filter the list, and variety reduces repeated content. No language model is used at runtime.</p></section>
+      </section>
+    </div>
+  </main>
+  <footer>StudyPath · Educational prototype · Suggestions support your judgment</footer>
+</body>
+</html>

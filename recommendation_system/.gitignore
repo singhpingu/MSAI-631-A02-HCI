@@ -1,0 +1,16 @@
+# Local environments, credentials and generated evidence stay out of GitHub.
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+._*
+.env
+.env.*
+dist/
+evidence/
+*.zip
+*.docx
+*.pdf
+test_results*.txt
+local_environment*.txt
+node_modules/

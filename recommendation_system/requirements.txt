@@ -1,0 +1,3 @@
+# Pin the directly used ML library to the version verified for this project.
+# Its NumPy, SciPy, joblib and threadpoolctl dependencies install automatically.
+scikit-learn==1.8.0

@@ -1,0 +1,476 @@
+[
+  {
+    "id": "U01",
+    "title": "Audit a registration form",
+    "description": "Inspect an everyday form for unclear labels, hidden errors and unnecessary fields.",
+    "topic": "Usability",
+    "level": "Beginner",
+    "duration_minutes": 15,
+    "format": "Practice",
+    "tags": [
+      "forms",
+      "heuristics",
+      "clarity"
+    ],
+    "steps": [
+      "Choose a form you can safely inspect.",
+      "List three confusing interactions.",
+      "Propose one change and explain the user benefit."
+    ]
+  },
+  {
+    "id": "U02",
+    "title": "Plan a cognitive walkthrough",
+    "description": "Predict where a new user might struggle while completing a short interface task.",
+    "topic": "Usability",
+    "level": "Intermediate",
+    "duration_minutes": 30,
+    "format": "Practice",
+    "tags": [
+      "walkthrough",
+      "learnability",
+      "evaluation"
+    ],
+    "steps": [
+      "Write a realistic task and its starting point.",
+      "Inspect each action for discoverability and feedback.",
+      "Record assumptions that need testing with users."
+    ]
+  },
+  {
+    "id": "U03",
+    "title": "Write a usability test script",
+    "description": "Create neutral instructions for observing task completion without coaching the participant.",
+    "topic": "Usability",
+    "level": "Intermediate",
+    "duration_minutes": 40,
+    "format": "Practice",
+    "tags": [
+      "testing",
+      "task",
+      "observation"
+    ],
+    "steps": [
+      "Choose one task with a clear completion condition.",
+      "Write a neutral task prompt and consent explanation.",
+      "List errors, completion time and comments to record."
+    ]
+  },
+  {
+    "id": "U04",
+    "title": "Publish an error description",
+    "description": "Explain how the error occured and how to recover.",
+    "topic": "Usability",
+    "level": "Beginner",
+    "duration_minutes": 10,
+    "format": "Reflection",
+    "tags": [
+      "errors",
+      "recovery",
+      "feedback"
+    ],
+    "steps": [
+      "Select a nonconfidential error you encountered.",
+      "Describe why its wording helped or confused you.",
+      "Rewrite it with a concrete recovery action."
+    ]
+  },
+  {
+    "id": "A01",
+    "title": "Check keyboard navigation",
+    "description": "Evaluate whether an interface can be used with a keyboard and visible focus.",
+    "topic": "Accessibility",
+    "level": "Beginner",
+    "duration_minutes": 20,
+    "format": "Practice",
+    "tags": [
+      "keyboard",
+      "focus",
+      "inclusion"
+    ],
+    "steps": [
+      "Navigate a page with Tab and Shift+Tab.",
+      "Check whether focus is visible on every control.",
+      "Identify one action that cannot be completed easily."
+    ]
+  },
+  {
+    "id": "A02",
+    "title": "Review meaningful labels",
+    "description": "Examine whether form labels and button names communicate their purpose.",
+    "topic": "Accessibility",
+    "level": "Beginner",
+    "duration_minutes": 15,
+    "format": "Practice",
+    "tags": [
+      "labels",
+      "forms",
+      "screen",
+      "reader"
+    ],
+    "steps": [
+      "Inspect labels on one small interface.",
+      "Check whether a label identifies the required input.",
+      "Propose a clearer label for one confusing control."
+    ]
+  },
+  {
+    "id": "A03",
+    "title": "Plan an accessible chart alternative",
+    "description": "Describe how a chart can provide a text or table alternative without losing its main meaning.",
+    "topic": "Accessibility",
+    "level": "Intermediate",
+    "duration_minutes": 30,
+    "format": "Reflection",
+    "tags": [
+      "chart",
+      "table",
+      "inclusion"
+    ],
+    "steps": [
+      "Choose a chart you are permitted to inspect.",
+      "Write the main takeaway in plain language.",
+      "List the values an accessible alternative should contain."
+    ]
+  },
+  {
+    "id": "A04",
+    "title": "Read about inclusive interaction needs",
+    "description": "Outline how different sensory and motor needs can change interaction requirements.",
+    "topic": "Accessibility",
+    "level": "Advanced",
+    "duration_minutes": 45,
+    "format": "Reading",
+    "tags": [
+      "inclusive",
+      "design",
+      "requirements"
+    ],
+    "steps": [
+      "Select a scholarly accessibility article yourself.",
+      "Identify the users and barriers it discusses.",
+      "Write two design requirements supported by the article."
+    ]
+  },
+  {
+    "id": "P01",
+    "title": "Practice Python dictionaries",
+    "description": "Use a dictionary for reliable lookup of records by stable identifiers.",
+    "topic": "Python",
+    "level": "Beginner",
+    "duration_minutes": 20,
+    "format": "Practice",
+    "tags": [
+      "python",
+      "dictionary",
+      "lookup",
+      "data",
+      "structures"
+    ],
+    "steps": [
+      "Create three fictional records with unique IDs.",
+      "Build a dictionary keyed by each ID.",
+      "Demonstrate lookup and explain duplicate ID handling."
+    ]
+  },
+  {
+    "id": "P02",
+    "title": "Validate a JSON input",
+    "description": "Practice checking input types and bounds before processing a request.",
+    "topic": "Python",
+    "level": "Intermediate",
+    "duration_minutes": 30,
+    "format": "Practice",
+    "tags": [
+      "python",
+      "json",
+      "validation",
+      "errors"
+    ],
+    "steps": [
+      "Define the expected fields for a small JSON object.",
+      "Reject a missing field and an invalid value.",
+      "Write a helpful message for each rejected input."
+    ]
+  },
+  {
+    "id": "P03",
+    "title": "Write a focused unit test",
+    "description": "Test a meaningful boundary case in a small Python function.",
+    "topic": "Python",
+    "level": "Beginner",
+    "duration_minutes": 15,
+    "format": "Practice",
+    "tags": [
+      "python",
+      "unittest",
+      "testing",
+      "boundary"
+    ],
+    "steps": [
+      "Choose a function with a clear expected behavior.",
+      "Write one ordinary and one boundary test.",
+      "Run the tests and inspect any failure message."
+    ]
+  },
+  {
+    "id": "P04",
+    "title": "Explore sparse vectors",
+    "description": "Compare sparse and dense representations for documents with many absent terms.",
+    "topic": "Python",
+    "level": "Advanced",
+    "duration_minutes": 50,
+    "format": "Practice",
+    "tags": [
+      "python",
+      "sparse",
+      "matrix",
+      "vector",
+      "memory"
+    ],
+    "steps": [
+      "Create a tiny document collection.",
+      "Inspect the shape and nonzero count of its TF IDF matrix.",
+      "Explain when sparse storage reduces unnecessary memory use."
+    ]
+  },
+  {
+    "id": "R01",
+    "title": "Compare recommendation approaches",
+    "description": "Explain the differences between content based, collaborative and hybrid recommendation.",
+    "topic": "Recommendation",
+    "level": "Beginner",
+    "duration_minutes": 25,
+    "format": "Reading",
+    "tags": [
+      "recommendation",
+      "filtering",
+      "theory"
+    ],
+    "steps": [
+      "Read one peer reviewed recommendation survey.",
+      "Summarize the input used by each approach.",
+      "Identify an appropriate approach for a new user with no history."
+    ]
+  },
+  {
+    "id": "R02",
+    "title": "Inspect a text similarity score",
+    "description": "Use a small example to understand TF IDF features and cosine similarity.",
+    "topic": "Recommendation",
+    "level": "Intermediate",
+    "duration_minutes": 30,
+    "format": "Practice",
+    "tags": [
+      "recommendation",
+      "tfidf",
+      "cosine",
+      "similarity"
+    ],
+    "steps": [
+      "Create three short item descriptions.",
+      "Compare their TF IDF vectors with cosine similarity.",
+      "Explain why a similarity score is not a probability of satisfaction."
+    ]
+  },
+  {
+    "id": "R03",
+    "title": "Evaluate variety in a result list",
+    "description": "Compare a relevance only ranking with a list that penalizes repeated content.",
+    "topic": "Recommendation",
+    "level": "Intermediate",
+    "duration_minutes": 35,
+    "format": "Practice",
+    "tags": [
+      "recommendation",
+      "diversity",
+      "ranking"
+    ],
+    "steps": [
+      "Run the same preference profile with two variety settings.",
+      "Compare repeated topics and changed positions.",
+      "Explain one tradeoff between similarity and variety."
+    ]
+  },
+  {
+    "id": "R04",
+    "title": "Design a cold start strategy",
+    "description": "Plan how a recommender can help a new user without assuming a personal history.",
+    "topic": "Recommendation",
+    "level": "Advanced",
+    "duration_minutes": 45,
+    "format": "Reflection",
+    "tags": [
+      "recommendation",
+      "cold",
+      "start",
+      "profile"
+    ],
+    "steps": [
+      "Describe the information available for a new user.",
+      "Choose a transparent starter strategy.",
+      "Explain how the user can correct the first suggestions."
+    ]
+  },
+  {
+    "id": "E01",
+    "title": "Map consent in an AI interface",
+    "description": "Decide which optional intelligent behaviors should require a visible user choice.",
+    "topic": "AI Ethics",
+    "level": "Beginner",
+    "duration_minutes": 15,
+    "format": "Reflection",
+    "tags": [
+      "consent",
+      "ai",
+      "privacy",
+      "user",
+      "control"
+    ],
+    "steps": [
+      "Choose an optional AI behavior.",
+      "Write a clear consent label describing that behavior.",
+      "Explain how a user can turn it off or reset it."
+    ]
+  },
+  {
+    "id": "E02",
+    "title": "Review recommendation bias",
+    "description": "Examine how a small catalogue can limit whose interests are represented.",
+    "topic": "AI Ethics",
+    "level": "Intermediate",
+    "duration_minutes": 30,
+    "format": "Reflection",
+    "tags": [
+      "bias",
+      "recommendation",
+      "fairness",
+      "catalogue"
+    ],
+    "steps": [
+      "List the topics represented in a catalogue.",
+      "Identify an interest that is missing.",
+      "Explain why adding varied items is different from proving fairness."
+    ]
+  },
+  {
+    "id": "E03",
+    "title": "Check an AI explanation",
+    "description": "Separate a persuasive explanation from evidence of the ranking mechanism.",
+    "topic": "AI Ethics",
+    "level": "Intermediate",
+    "duration_minutes": 25,
+    "format": "Practice",
+    "tags": [
+      "ai",
+      "explanation",
+      "transparency",
+      "trust"
+    ],
+    "steps": [
+      "Choose a recommendation with a visible explanation.",
+      "Find the item features supporting the explanation.",
+      "Record any claim that cannot be verified from those features."
+    ]
+  },
+  {
+    "id": "E04",
+    "title": "Draft a data minimization plan",
+    "description": "Plan which preference fields are necessary and how long they should be retained.",
+    "topic": "AI Ethics",
+    "level": "Advanced",
+    "duration_minutes": 40,
+    "format": "Reflection",
+    "tags": [
+      "privacy",
+      "data",
+      "retention",
+      "ai"
+    ],
+    "steps": [
+      "List the preference fields an app needs.",
+      "Remove a field that does not support the task.",
+      "Specify a reset and retention rule in plain language."
+    ]
+  },
+  {
+    "id": "W01",
+    "title": "Outline a literature review",
+    "description": "Turn a research question into a short outline organized by ideas rather than articles.",
+    "topic": "Research Writing",
+    "level": "Beginner",
+    "duration_minutes": 20,
+    "format": "Practice",
+    "tags": [
+      "research",
+      "writing",
+      "literature",
+      "outline"
+    ],
+    "steps": [
+      "Write one focused research question.",
+      "Create three themes related to the question.",
+      "Place candidate sources under the themes they support."
+    ]
+  },
+  {
+    "id": "W02",
+    "title": "Compare scholarly claims",
+    "description": "Assess whether two articles support the same claim under similar conditions.",
+    "topic": "Research Writing",
+    "level": "Intermediate",
+    "duration_minutes": 30,
+    "format": "Reading",
+    "tags": [
+      "research",
+      "scholarly",
+      "evidence",
+      "methods"
+    ],
+    "steps": [
+      "Select two peer reviewed articles yourself.",
+      "Compare their participants, tasks and limitations.",
+      "Write one claim that the evidence can support."
+    ]
+  },
+  {
+    "id": "W03",
+    "title": "Review an APA reference",
+    "description": "Check whether a journal reference includes the verified authors, year, title and DOI.",
+    "topic": "Research Writing",
+    "level": "Beginner",
+    "duration_minutes": 10,
+    "format": "Practice",
+    "tags": [
+      "apa",
+      "citation",
+      "references",
+      "writing"
+    ],
+    "steps": [
+      "Open the publisher record for a journal article.",
+      "Compare it with your reference entry.",
+      "Correct any mismatch in author order, year or DOI."
+    ]
+  },
+  {
+    "id": "W04",
+    "title": "Plan a research reflection",
+    "description": "Connect a technical design choice to your own observations without inventing results.",
+    "topic": "Research Writing",
+    "level": "Advanced",
+    "duration_minutes": 45,
+    "format": "Reflection",
+    "tags": [
+      "reflection",
+      "evidence",
+      "learning",
+      "research"
+    ],
+    "steps": [
+      "Choose one design decision you can explain.",
+      "Separate completed actions from proposed evaluation.",
+      "Describe one limitation and a concrete next step."
+    ]
+  }
+]
