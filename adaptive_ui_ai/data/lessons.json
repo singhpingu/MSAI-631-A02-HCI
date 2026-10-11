@@ -1,0 +1,56 @@
+[
+  {
+    "id": "adaptive-ui", "title": "Adaptive user interfaces", "expectedMs": 45000,
+    "lesson": "An adaptive interface changes its behavior or presentation using information about the user or context. A manually selected setting is an example of user customization.",
+    "example": "Example: A study app can expand a worked example after repeated requests for help, while keeping its navigation in the same place.",
+    "question": "Which action demonstrates automatic interface adaptation?",
+    "options": ["A user selects a dark theme in Settings.", "The app expands guidance after observing repeated requests for help.", "A designer changes the logo before release."],
+    "answer": 1, "hint": "Look for a change initiated by the system using interaction information.",
+    "explanation": "The app initiates the change using observed interactions. Selecting a theme yourself is customization.", "source": "Jameson (2008)"
+  },
+  {
+    "id": "intelligent-ui", "title": "Intelligent user interfaces", "expectedMs": 45000,
+    "lesson": "An intelligent user interface uses AI methods to support interaction. It might infer an intention, recommend a next step, or interpret language. Adaptation is one possible capability.",
+    "example": "Example: A scheduling assistant proposes a meeting time, and the user checks or edits the proposal.",
+    "question": "What describes the relationship between intelligent and adaptive interfaces?",
+    "options": ["Every intelligent interface must rearrange its controls.", "An intelligent interface can support interaction without changing its layout.", "Adaptive interfaces always require a large language model."],
+    "answer": 1, "hint": "Intelligence can improve an action or suggestion as well as presentation.",
+    "explanation": "AI assistance can support interaction while keeping the layout stable. Adaptation can also use simple rules.", "source": "Horvitz (1999); Jameson (2008)"
+  },
+  {
+    "id": "control", "title": "User control and correction", "expectedMs": 40000,
+    "lesson": "AI suggestions may be mistaken. Clear controls for dismissing a suggestion or correcting a result help users retain control of the interaction.",
+    "example": "Example: A user selects Guided view even when the model proposes Focused view, and the app respects that choice.",
+    "question": "What should happen when a user chooses a view manually?",
+    "options": ["The app respects the choice and stops automatic switching.", "The model immediately overrides the choice.", "The app hides the setting to avoid disagreement."],
+    "answer": 0, "hint": "A recommendation should support the user's task and choices.",
+    "explanation": "Manual control lets the user correct an unsuitable recommendation. This app turns adaptation off when a view is selected.", "source": "Amershi et al. (2019)"
+  },
+  {
+    "id": "timing", "title": "Timing adaptive changes", "expectedMs": 40000,
+    "lesson": "Automation can interrupt work when it acts at the wrong moment. A change between tasks is easier to inspect than a change during an answer.",
+    "example": "Example: The app queues a view recommendation after a checked answer and applies it when the next question begins.",
+    "question": "When does this app apply an automatic view change?",
+    "options": ["While the user is selecting an answer.", "Every time a mouse moves.", "Between completed questions."],
+    "answer": 2, "hint": "Use a point in the interaction where the current answer is already complete.",
+    "explanation": "Task boundaries reduce disruption. Essential controls remain available after the change.", "source": "Horvitz (1999)"
+  },
+  {
+    "id": "personalization", "title": "Personalization and accessibility", "expectedMs": 45000,
+    "lesson": "Users differ in their devices, preferences, tasks, and interaction abilities. Research on Supple demonstrates how interface generation can respond to these differences.",
+    "example": "Example: A user needs larger interaction targets. An interface can accommodate that preference without assigning a diagnosis.",
+    "question": "What is a useful reason to personalize an interface?",
+    "options": ["To accommodate differences in tasks and interaction needs.", "To infer a medical condition from a slow answer.", "To remove controls that the designer dislikes."],
+    "answer": 0, "hint": "Consider the fit between the interface and the person's interaction needs.",
+    "explanation": "Personalization can improve the fit of the interface. Timing alone does not establish ability or a medical condition.", "source": "Gajos et al. (2010)"
+  },
+  {
+    "id": "synthetic-data", "title": "Understanding demonstration scores", "expectedMs": 40000,
+    "lesson": "Logistic regression converts a weighted combination of input features into a score between zero and one. The usefulness of that score depends on its training data and evaluation.",
+    "example": "Example: Agreement with invented labels checks a model's implementation, but does not establish that the same labels describe real students.",
+    "question": "What does a high score from this app's synthetic model establish?",
+    "options": ["The user has a diagnosed learning difficulty.", "Guided view is favored by the invented demonstration policy.", "The app has proved an improvement in learning outcomes."],
+    "answer": 1, "hint": "The model has been trained only on invented profiles.",
+    "explanation": "The score supports a demonstration recommendation. Real educational benefits require evaluation with consenting users.", "source": "Ng (2012); original project dataset"
+  }
+]

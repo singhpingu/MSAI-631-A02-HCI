@@ -1,0 +1,78 @@
+AdaptiveStudy AI design notes — Version 1.0.0
+
+Scope and requirements
+An original six-question AI/HCI study app demonstrates automatic adaptation
+from recent completed interactions. The implementation stays small enough
+for a student to read and modify. Run with Python 3.11+ and a modern browser;
+no pip packages, Node installation, model downloads, paid APIs or accounts
+are needed for the app. Node 20+ is needed only for optional JavaScript tests.
+
+Architecture and responsibilities
+app.py serves an explicit resource allowlist on 127.0.0.1. It never receives
+study observations. HTML and CSS define the semantic, responsive interface.
+app.js handles consent, task events, visible-page timing and DOM rendering.
+model.mjs validates the trained model, computes features and performs inference.
+adaptation.mjs applies warmup, consecutive-decision, cooldown and override rules.
+machine_learning.py trains and evaluates the original classifier offline.
+scripts/train_model.py produces reproducible JSON and CSV artifacts.
+
+Data flow
+Static lessons and model -> browser -> user answers or requests hints ->
+completed-task observation -> bounded recent history -> normalized feature
+vector -> learned score -> guarded policy -> view change at next question.
+No behavior is posted to the server. No cookie, localStorage, sessionStorage
+or database is used. Reloading the page or resetting the session clears history.
+
+Data structures and invariants
+Immutable Python Profile dataclass: ID, split, three features, label.
+Feature order: error_rate, hint_rate, slow_rate; JSON schema version 1.
+JavaScript ring buffer: five immutable copied observations, O(1) append and
+bounded memory. Three Float64Array weights support fixed-size inference.
+Lesson IDs must be unique and answer indices must refer to existing options.
+The controller's supported modes are balanced, guided and focused.
+Only completed tasks observed while adaptation is enabled enter its history.
+Scores are explicitly described as synthetic demonstration scores.
+
+Interaction design
+Balanced view shows the concept and practice question. Guided view expands a
+worked example and hint. Focused view initially collapses the supplementary
+concept. Users can open the concept or hint in any mode. Questions, options,
+submit and next controls remain available. Automatic changes never occur
+mid-answer. Manual mode selection disables AI; switching AI off preserves
+the current view. Enabling it again begins a new observation window.
+Simulation buttons require explicit AI opt-in, replace history with invented
+observations and display a visible simulation label. Reset before collecting
+or photographing your own practice session.
+
+Accessibility and reliability decisions
+Semantic headings, fieldsets, legends, labeled native radio buttons and select,
+skip link, visible keyboard focus, polite live status text, textual feedback,
+responsive layout, and reduced-motion support are implemented. They require
+local keyboard and assistive technology review before claiming conformance.
+Content is inserted as textContent, never evaluated as HTML. Model/content
+validation prevents unsupported schemas or invalid answer indices. Missing
+resources produce a clear startup message. Server responses include CSP,
+no-sniff, no-store, no-referrer and frame restrictions. This local standard-
+library server is a development tool, not a production deployment design.
+
+Verification
+python3 -m unittest discover -s tests -p "test_*.py" -v
+node --test tests/*.test.mjs
+python3 scripts/train_model.py --check
+The 13 Python and 10 JavaScript checks passed in the assisted development
+environment. Tests cover split integrity, reproducibility, invalid inputs,
+stable inference, resource boundaries, consent, warmup, task-boundary changes,
+cooldown, manual override, contradictory signals and reset. Browser preview
+could not be completed here; use MAC_AND_GITHUB_STEPS.txt for local UI checks.
+
+Extension points
+Add original, credited lessons in data/lessons.json. Keep valid answer indices.
+Explore alternate features in both trainer and runtime feature extractor.
+Retrain and evaluate before replacing model.json. Keep disclosure accurate.
+Collect consenting-user feedback before changing thresholds or claiming benefits.
+
+Distribution
+The archive builder includes an explicit list of 21 project files. It excludes
+all README files, environments, caches, credentials, Git metadata and outputs.
+The project's original code license is in LICENSE.txt. Sources and AI-assisted
+elements are documented in SOURCE_CREDITS.txt and the accompanying APA report.

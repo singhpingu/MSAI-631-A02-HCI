@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A local study practice app demonstrating AI-based adaptive interfaces.">
+  <title>AdaptiveStudy AI</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body data-mode="balanced">
+  <a class="skip-link" href="#practice">Skip to practice</a>
+  <header class="site-header">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">a</span><div><strong>AdaptiveStudy <span>AI</span></strong><small>AI and human computer interaction</small></div></div>
+    <span class="local-badge">Local classroom project</span>
+  </header>
+  <main class="shell">
+    <div class="intro"><p class="eyebrow">YOUR PRACTICE SPACE</p><h1>A little guidance, when you need it.</h1><p>Practice six AI and HCI concepts. Choose your view, or let the demo model adjust the amount of guidance as you work.</p></div>
+    <p id="loading" role="status">Loading study content and the local model…</p>
+    <p id="fatal" role="alert" hidden></p>
+    <div id="workspace" class="workspace" hidden>
+      <section class="practice card" id="practice" aria-labelledby="practice-heading" tabindex="-1">
+        <div class="card-top"><span class="eyebrow">STUDY SESSION</span><span id="view-badge" class="view-badge">Balanced view</span></div>
+        <div class="progress-row"><span id="task-progress">Question 1 of 6</span><span id="completed-count">0 completed</span></div>
+        <progress id="progress" value="1" max="6" aria-label="Position in practice set"></progress>
+        <h2 id="practice-heading">Study concept</h2>
+        <details id="lesson" class="lesson" open><summary>Review the concept</summary><p id="lesson-text"></p><p id="example-text" class="example" hidden></p></details>
+        <form id="answer-form">
+          <fieldset id="answer-options"><legend id="question">Question</legend><div id="choices" class="choices"></div></fieldset>
+          <div class="task-actions"><button id="submit-answer" class="primary" type="submit">Check answer</button><button id="hint-button" type="button" aria-expanded="false" aria-controls="hint-text">Show hint</button></div>
+        </form>
+        <p id="hint-text" class="hint" hidden></p>
+        <div id="feedback" class="feedback" role="status" hidden></div>
+        <div class="next-row"><span id="source-credit" class="source-credit"></span><button id="next-task" class="primary" type="button" hidden>Next question →</button></div>
+        <p class="small practice-note">The practice set repeats after six questions. Your responses stay in this tab.</p>
+      </section>
+      <aside class="sidebar" aria-label="Adaptation settings and explanation">
+        <section class="card adaptation-card" aria-labelledby="adaptation-heading">
+          <div class="card-top"><span class="eyebrow">YOU ARE IN CONTROL</span><span class="ai-dot" aria-hidden="true"></span></div>
+          <h2 id="adaptation-heading">Adapt your view</h2>
+          <label class="toggle-label"><input id="ai-enabled" type="checkbox"><span>Enable AI adaptation</span></label>
+          <p class="small">When enabled, the app uses recent answers, requested hints, and active task time to suggest a view. Changes happen between questions.</p>
+          <label class="field-label" for="manual-mode">Choose a view yourself</label>
+          <select id="manual-mode"><option value="balanced">Balanced · concept and practice</option><option value="guided">Guided · example and visible hint</option><option value="focused">Focused · compact practice</option></select>
+          <p class="small">Choosing a view turns AI adaptation off.</p>
+          <div class="explanation"><p id="adaptation-status" role="status" aria-live="polite">AI adaptation is off.</p><p id="score-detail" class="small">Enable it to begin a new observation window.</p><dl id="signals" hidden><div><dt>Incorrect answers</dt><dd id="error-signal">0%</dd></div><div><dt>Requested hints</dt><dd id="hint-signal">0%</dd></div><div><dt>Longer active time</dt><dd id="slow-signal">0%</dd></div></dl></div>
+          <button id="reset" class="quiet" type="button">Reset session and clear history</button>
+        </section>
+        <section class="card demo-card" aria-labelledby="demo-heading"><span class="eyebrow">EXPLORE THE ADAPTATION</span><h2 id="demo-heading">Try a simulated session</h2><p class="small">Enable AI first. These buttons replace the session with four invented observations and show the resulting view. They are not your activity.</p><div class="demo-actions"><button id="demo-guided" type="button" disabled>Simulate more guidance</button><button id="demo-focused" type="button" disabled>Simulate focused practice</button></div><p id="demo-label" class="demo-label" hidden>SIMULATED DATA · reset to return to your practice</p></section>
+      </aside>
+    </div>
+    <section class="about card" aria-labelledby="about-heading"><h2 id="about-heading">How this study space adapts</h2><div class="about-grid"><p><strong>Guidance changes.</strong> Guided view expands an example and hint. Focused view starts with the concept collapsed. The question, answers, and navigation remain available in every view.</p><p><strong>Your choice comes first.</strong> Adaptation starts off. Disable it to stop collecting new observations. Reset clears the session. Reloading this page also clears all history.</p><p><strong>A demonstration model.</strong> Logistic regression was trained offline on 240 synthetic profiles. It is not a measure of your ability, and its score is not a validated estimate of your learning needs.</p></div><details class="sources"><summary>Research and source credits</summary><p>This original project uses ideas from the following sources. Study questions are original summaries, not copied university course materials. OpenAI ChatGPT and Codex assisted with code, synthetic data, testing, and report drafting.</p><ul><li><a href="https://media.contaction.li/homepage-2017/abs/Jameson08Handbook.html" target="_blank" rel="noopener noreferrer">Jameson (2008) · Adaptive interfaces and agents</a></li><li><a href="https://www.eecs.harvard.edu/~kgajos/papers/2010/gajos10automatically.shtml" target="_blank" rel="noopener noreferrer">Gajos, Weld, and Wobbrock (2010) · Supple</a></li><li><a href="https://www.microsoft.com/en-us/research/publication/principles-mixed-initiative-user-interfaces/" target="_blank" rel="noopener noreferrer">Horvitz (1999) · Mixed initiative interfaces</a></li><li><a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2019/01/Guidelines-for-Human-AI-Interaction-camera-ready.pdf" target="_blank" rel="noopener noreferrer">Amershi et al. (2019) · Human AI interaction guidelines</a></li><li><a href="https://cs229.stanford.edu/notes_archive/cs229-notes-all/cs229-notes1.pdf" target="_blank" rel="noopener noreferrer">Ng (2012) · Logistic regression lecture notes</a></li></ul></details></section>
+  </main>
+  <footer class="site-footer">AdaptiveStudy AI · Original student project · Session data stays in browser memory</footer>
+  <noscript><p>This app requires JavaScript. Enable JavaScript and reload the page.</p></noscript>
+</body>
+</html>

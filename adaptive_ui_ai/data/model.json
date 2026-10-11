@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "algorithm": "logistic_regression",
+  "feature_names": [
+    "error_rate",
+    "hint_rate",
+    "slow_rate"
+  ],
+  "weights": [
+    9.661937290402847,
+    5.567831082214632,
+    3.3045570366712522
+  ],
+  "bias": -8.391987014839822,
+  "training": {
+    "seed": 631,
+    "rows": 240,
+    "iterations": 2500,
+    "learning_rate": 0.8,
+    "l2": 0.001
+  },
+  "evaluation": {
+    "test_rows": 80,
+    "correct": 75,
+    "accuracy": 0.9375
+  },
+  "disclosure": "Trained and evaluated only on invented synthetic profiles. Scores are not calibrated probabilities of real learning needs."
+}

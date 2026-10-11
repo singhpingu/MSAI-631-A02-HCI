@@ -1,0 +1,75 @@
+AdaptiveStudy AI — source and AI assistance credits
+Version 1.0.0, October 11, 2026
+
+This is an original student implementation prepared for Yasharth Singh.
+No third-party application or source-code template was copied or bundled.
+The six study questions, explanatory examples, dataset generator, logistic
+regression implementation, UI, adaptation policy, server, and tests are original.
+The original project code is distributed under LICENSE.txt. External resources
+retain their own copyright; the archive contains links and citations, not copies
+of their papers or implementations.
+
+Conceptual and scholarly sources
+
+Amershi, S., Weld, D., Vorvoreanu, M., Fourney, A., Nushi, B., Collisson, P.,
+Suh, J., Iqbal, S. T., Bennett, P. N., Inkpen, K., Teevan, J., Kikin-Gil, R.,
+& Horvitz, E. (2019). Guidelines for human-AI interaction. In Proceedings of
+the 2019 CHI Conference on Human Factors in Computing Systems (Article 3,
+pp. 1–13). Association for Computing Machinery.
+https://doi.org/10.1145/3290605.3300233
+Used for disclosure, user control, correction, and explaining AI behavior.
+
+Gajos, K. Z., Weld, D. S., & Wobbrock, J. O. (2010). Automatically generating
+personalized user interfaces with Supple. Artificial Intelligence, 174,
+910–950.
+https://www.eecs.harvard.edu/~kgajos/papers/2010/gajos10automatically.shtml
+Used as a research example of personalized interfaces. No Supple code reused.
+
+Horvitz, E. (1999). Principles of mixed-initiative user interfaces. In
+Proceedings of the SIGCHI Conference on Human Factors in Computing Systems
+(pp. 159–166). Association for Computing Machinery.
+https://www.microsoft.com/en-us/research/publication/principles-mixed-initiative-user-interfaces/
+Used for the relationship between automated assistance, timing, and user choice.
+
+Jameson, A. (2008). Adaptive interfaces and agents. In A. Sears & J. A. Jacko
+(Eds.), The human-computer interaction handbook: Fundamentals, evolving
+technologies and emerging applications (2nd ed., pp. 433–458). CRC Press.
+https://media.contaction.li/homepage-2017/abs/Jameson08Handbook.html
+Used for adaptive interface concepts and usability tradeoffs.
+
+Ng, A. (2012). CS229 lecture notes: Supervised learning [Lecture notes].
+Stanford University.
+https://cs229.stanford.edu/notes_archive/cs229-notes-all/cs229-notes1.pdf
+Used for logistic regression and gradient-based training concepts.
+The Python and JavaScript implementations and synthetic label policy are original.
+
+Technical documentation
+
+Python Software Foundation. (n.d.). http.server — HTTP servers.
+https://docs.python.org/3.11/library/http.server.html
+Used for the standard-library HTTP server API. The app is a local development demo.
+
+GitHub. (n.d.). Cloning a repository.
+https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
+GitHub. (n.d.). Pushing commits to a remote repository.
+https://docs.github.com/en/get-started/git-basics/pushing-commits-to-a-remote-repository
+Used for the Mac and GitHub instructions.
+
+AI assistance disclosure
+
+OpenAI ChatGPT and Codex assisted with planning, original source-code generation,
+synthetic data generation, test creation and execution, scholarly source searches,
+and drafting and formatting the accompanying report. The app does not call an
+OpenAI service or any other AI API at runtime. Its AI component is the bundled,
+locally trained logistic regression model. No GitHub Copilot was used.
+OpenAI. (n.d.). ChatGPT [Large language model]. https://openai.com/chatgpt/
+OpenAI. (n.d.). Codex [AI coding assistant]. https://openai.com/codex/
+
+Project source citation
+
+Singh, Y. (2026). AdaptiveStudy AI (Version 1.0.0) [Unpublished computer software].
+Accompanying source archive. Submission repository:
+https://github.com/singhpingu/MSAI-631-A02-HCI
+Branch: main. Planned project directory: adaptive_ui_ai.
+The submission must be uploaded by the student; this archive does not imply
+that its code has already been published to the repository.

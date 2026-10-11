@@ -1,0 +1,61 @@
+AdaptiveStudy AI model card
+
+Purpose
+Demonstrate how a learned classifier can inform an adaptive interface.
+It recommends the amount of study guidance for a classroom prototype.
+It does not assess ability, disability, achievement, or eligibility.
+
+Training data
+320 original synthetic aggregate profiles generated with seed 631:
+240 training rows and 80 held-out evaluation rows. No actual people, grades,
+university records, or private course content are represented. CSV includes
+row identifiers and split labels. Training never reads evaluation rows.
+
+Inputs in fixed order
+1. error_rate: proportion of incorrect completed answers in the recent window.
+2. hint_rate: proportion with an explicitly requested hint before submission.
+3. slow_rate: proportion with active visible-page time above the task's invented
+   expected duration (40 or 45 seconds). Hidden or unfocused time is excluded.
+Each feature ranges from 0 to 1; the recent window contains at most five records.
+Automatically displayed hints do not count as requested hints.
+
+Invented labeling policy
+Guidance label = 1 when 3*error_rate + 2*hint_rate + slow_rate >= 2.75;
+otherwise label = 0. This rule reflects a teaching example, not empirical evidence.
+
+Algorithm and training
+Binary logistic regression, learned weights and bias, stable sigmoid, 2,500
+batch-gradient iterations, learning rate 0.8, L2 regularization 0.001.
+Training runs offline in Python. Runtime inference uses JavaScript and the
+shipped JSON weights; runtime interactions do not retrain the weights.
+
+Evaluation completed in the assisted development environment
+75 of 80 held-out invented labels matched at a 0.5 classification threshold:
+93.75% agreement. This result measures agreement with the synthetic labeling
+rule only. It does not establish calibration, fairness, improved learning,
+or improved user experience for real students. No human usability study was run.
+13 Python and 10 JavaScript tests passed. Browser preview was unavailable in
+the development environment; the supplied Mac walkthrough covers local UI checks.
+
+UI decision policy
+Adaptation starts off. At least three observations are needed before decisions;
+two consecutive consistent decisions are required, so the first switch can
+occur after the fourth observed task. A score >= 0.70 proposes Guided view;
+<= 0.30 proposes Focused view; intermediate scores preserve the current view.
+Changes apply at the next task boundary. A two-observation cooldown follows
+a switch. Manual view selection cancels automation. Reset clears everything.
+
+Limitations and improvements
+The invented labels encode assumptions about errors, hint use and timing.
+Reading slowly or requesting hints can be intentional. Timing may reflect
+language, interruptions, assistive technologies or task difficulty. A real
+application should test features and thresholds with consenting users and
+let people remove timing from inference. Session-only history loses continuity
+on reload, which is an intentional privacy and simplicity tradeoff here.
+
+Reproduction
+The check compares metadata and CSV exactly; model parameters use an absolute
+tolerance of 1e-10 to permit tiny differences between macOS and Linux math libraries.
+python3 scripts/train_model.py --check
+python3 scripts/train_model.py       (regenerates model JSON and synthetic CSV)
+See SOURCE_CREDITS.txt for mathematical and HCI sources and AI assistance.
